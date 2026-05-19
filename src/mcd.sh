@@ -253,3 +253,14 @@ EOF
   fi
   $CMD_CD $note_dir
 }
+
+_mcd_init_aliases() {
+  # 引数 $1 のデフォルトは "t"
+  prefix=${1:-t}
+  echo "alias ${prefix}='mcd'"
+  echo "alias ${prefix}${prefix}='mcd -1'"
+  echo "alias ${prefix}p='mcd -1'"
+  echo "alias ${prefix}n='mcd +1'"
+  echo "alias ${prefix}k='mcd -1'"
+  echo "alias ${prefix}j='mcd +1'"
+}
