@@ -168,3 +168,12 @@ make shell             # コンテナに入って手動確認
 make shell ENGINE=podman  # Podman を使用する場合
 make clean             # コンテナを削除
 ```
+
+コンテナ内では `../src` が `/app/src` にマウントされています。
+`source` で読み込むことで `mcd` / `mmcd` 等、mcd.sh の各関数を実行できます。
+
+```sh
+# コンテナ内での操作例
+source /app/src/mcd.sh
+mcd --help
+```
